@@ -5,7 +5,7 @@
     <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
     <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
     <IsPackable>false</IsPackable>
-    <SpaRoot>ClientApp\</SpaRoot>
+    <SpaRoot>client_app\</SpaRoot>
     <DefaultItemExcludes>$(DefaultItemExcludes);$(SpaRoot)node_modules\**</DefaultItemExcludes>
   </PropertyGroup>
 
@@ -19,8 +19,23 @@
     <!-- Don't publish the SPA source files, but do show them in the project files list -->
     <Content Remove="$(SpaRoot)**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
+    <Content Remove="ClientApp_\package-lock.json" />
+    <Content Remove="ClientApp_\package.json" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="ClientApp_\.DS_Store" />
+    <None Remove="ClientApp_\.gitignore" />
+    <None Remove="ClientApp_\yarn.lock" />
+    <None Remove="ClientApp_\src\index.css" />
+    <None Remove="ClientApp_\src\index.js" />
+    <None Remove="ClientApp_\src\registerServiceWorker.js" />
+    <None Remove="ClientApp_\src\components\FetchData.js" />
+    <None Remove="ClientApp_\src\components\Home.js" />
+    <None Remove="ClientApp_\src\components\Layout.js" />
+    <None Remove="ClientApp_\src\components\NavMenu.css" />
+    <None Remove="ClientApp_\src\components\NavMenu.js" />
+  </ItemGroup>
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
     <!-- Ensure Node.js is installed -->
     <Exec Command="node --version" ContinueOnError="true">
