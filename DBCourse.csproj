@@ -5,7 +5,7 @@
     <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
     <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
     <IsPackable>false</IsPackable>
-    <SpaRoot>client_app\</SpaRoot>
+    <SpaRoot>ClientApp\</SpaRoot>
     <DefaultItemExcludes>$(DefaultItemExcludes);$(SpaRoot)node_modules\**</DefaultItemExcludes>
   </PropertyGroup>
 
@@ -21,6 +21,8 @@
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
     <Content Remove="ClientApp_\package-lock.json" />
     <Content Remove="ClientApp_\package.json" />
+    <Content Remove="client_app_\tsconfig.json" />
+    <Content Remove="client_app_\public\manifest.json" />
   </ItemGroup>
 
   <ItemGroup>
@@ -35,6 +37,21 @@
     <None Remove="ClientApp_\src\components\Layout.js" />
     <None Remove="ClientApp_\src\components\NavMenu.css" />
     <None Remove="ClientApp_\src\components\NavMenu.js" />
+    <None Remove="client_app_\.DS_Store" />
+    <None Remove="client_app_\README.md" />
+    <None Remove="client_app_\yarn.lock" />
+    <None Remove="client_app_\public\index.html" />
+    <None Remove="client_app_\src\.DS_Store" />
+    <None Remove="client_app_\src\App.css" />
+    <None Remove="client_app_\src\App.test.js" />
+    <None Remove="client_app_\src\App.tsx" />
+    <None Remove="client_app_\src\index.css" />
+    <None Remove="client_app_\src\index.js" />
+    <None Remove="client_app_\src\logo.svg" />
+    <None Remove="client_app_\src\react-app-env.d.ts" />
+    <None Remove="client_app_\src\serviceWorker.js" />
+    <None Remove="client_app_\src\component\FetchExample.tsx" />
+    <None Remove="client_app_\src\component\vsCodeConfig.code-workspace" />
   </ItemGroup>
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
     <!-- Ensure Node.js is installed -->
